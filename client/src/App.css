@@ -1,0 +1,233 @@
+html {
+      height: 100%;
+      display: block;
+      font-family: sans-serif
+
+
+}
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.twitch-login h1{
+  font-size: 40px;
+  
+}
+.twitch-login a{
+  text-decoration: none;
+  color: #7c7e81;
+
+}
+.twitch-login a:hover{
+  color: #282c34
+}
+.twitch-login { 
+  text-align: center;
+}
+.logged-in img{
+  height:350px;
+}
+.app{
+background-size: cover;
+color:black;
+  background-color: #D8CDFD;
+
+
+
+}
+.streamers-message {
+ margin: 150px; 
+  text-align: center;
+}
+.text {
+  margin-top: 100px;
+}
+.logged-out{
+  text-align: center;
+  background-color: rgb(205, 214, 253);
+    height:100vh;
+
+
+}
+.channel-detail p{
+  font-size: 1.2em;
+
+}
+.logged-in .container {
+  margin-top: 45px;
+}
+
+.logged-in a {
+  display: inline-block;
+  size: 2em;
+  text-decoration: none;
+  color:#282c34;
+  background: rgba(25, 0, 255, 0.418);
+  border-radius: 25%;
+  padding: 10px 20px;
+  
+}
+.login {
+  display:block;
+}
+.signUp {
+  display: block
+}
+
+.navigation a{
+  text-decoration: none;
+  color: white;
+
+
+}
+nav div{
+  color: white;
+}
+nav {
+  opacity:0.6;
+  color:white;
+}
+.signup input{
+  margin:20px;
+
+}
+.greetings:hover {
+  color:#86888b;
+}
+.footer {
+  background: #282c34;
+  color:#7c7e81;
+   margin: 0;
+   padding: 10px;
+  
+}
+.footer a{
+  text-decoration: none;
+  color: #7c7e81;
+
+}
+.footer a:hover{
+  text-decoration: none;
+}
+.signup-title {
+   margin-top:10px;
+}
+.logged-in img{
+  max-width: 480px;
+  height: auto;
+}
+.hate {
+  background: red;
+  color:white
+}
+.like {
+  background: green;
+  color:white;
+  display: inline-block;
+}
+.disabled {
+  background: none;
+  color: black;
+  display: inline-block;
+}
+.reverse{
+  display: none;
+}
+.profile img{
+  margin-top: 100px;
+}
+.stream img {
+  height: 95px;
+  margin: 20px;
+}
+.StreamLink  {
+  margin :20px;
+  padding-right: 10px;
+}
+.app{
+      min-height: 100%;
+      position: relative;
+}
+.title-random {
+  font-size: 55px;
+  margin: 50px;
+}
+.text-random {
+  font-size: 30px;
+  margin: 40px;
+}
+.infoImg {
+  margin-bottom: 13em; 
+}
+.infoStream {
+  text-align: center;
+}
+.infoStream h1 {
+  margin-top:6em;
+  margin-bottom: 3em;
+
+}
+.infoStream h2{
+margin-bottom: 40px;
+}
+.randomStream  img{
+margin-top: 1em; 
+}
+.randomStream h1 {
+  margin-top: 0.2em;
+}
+.slideImg{
+  opacity:0.3;
+}
+.StreamName, .StreamDescription{
+  color:white;
+}
+.carrousel {
+  display: inline-block;
+  text-align: center;
+}
+
+.slideImg {
+  text-align: center;
+}
+.infos {
+  display: flex;
+  justify-content: space-around;
+}
+.usuario, .streamer{
+  background-color: rgba(140, 175, 255, 0.534);
+
+}
+.usuario p, .streamer p{
+  max-width: 170px;
+}
