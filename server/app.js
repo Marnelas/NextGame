@@ -106,5 +106,10 @@ app.use('/auth', authRoutes);
 const streamRoutes = require("./routes/stream.routes");
 app.use("/stream", streamRoutes);
       
+ app.use((req, res) => {
+   res.sendFile(__dirname + "/public/index.html");
+ });
 
+
+ 
 module.exports = app;
