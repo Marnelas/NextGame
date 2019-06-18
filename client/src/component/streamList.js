@@ -12,7 +12,8 @@ class StreamList extends Component {
       vote: 0,
       isStreaming: {},
       buttonState: false,
-      hateState: false
+      hateState: false,
+      msg:""
     };
   }
 
@@ -40,38 +41,49 @@ class StreamList extends Component {
   };
   componentDidMount = () => {
     this.services.getStream().then(response => {
-      console.log("hola mama",response)
-      this.setState({ stream: response.data });
-      this.handleStream(response.data.id);
+    
+
+      this.setState({ stream: response, msg:response.msg })
+
+      
+        if(response.id)this.handleStream(response.id);
     });
   };
   render() {
-    console.log(this.state.stream)
-                 return (
-                   <div>
-                     <Carousel className="carrousel">
-                       {this.state.stream.map(elm=>{
-                         
-  return <Carousel.Item key={elm._id}>
-    <img
-      className="d-block w-60 slideImg"
-      src={elm.logo}
-      alt="First slide"
-    />
-    <Carousel.Caption>
-      <h3 className="StreamName">Stream de {elm.username}  </h3>
-      <p className="StreamDescription">{elm.description}</p>
-    </Carousel.Caption>
-  </Carousel.Item>
-                       })}
-  </Carousel>
-                     
-                             </div>
-                           )
+    console.log(this.state.msg)
+    if(this.state.stream.length === 3){
+      return (
+        <div>
+          <Carousel className="carrousel">
+            {this.state.stream.map(elm=>{
+              
+return <Carousel.Item key={elm._id}>
+<img
+className="d-block w-60 slideImg"
+src={elm.logo}
+alt="First slide"
+/>
+<Carousel.Caption>
+<h3 className="StreamName">Stream de {elm.username}  </h3>
+<p className="StreamDescription">{elm.description}</p>
+</Carousel.Caption>
+</Carousel.Item>
+            })}
+</Carousel>
+          
+                  </div>
+                )
+
+                }else{
+                 return <h2>{this.state.msg}</h2>
+
+                }
+
+    }
                } 
                
              
-           }
+           
 
 
 export default StreamList;

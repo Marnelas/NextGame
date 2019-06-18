@@ -7,6 +7,10 @@ html {
 }
 .App {
   text-align: center;
+  height:100vh;
+    background-color: rgba(140, 175, 255, 0.534);
+
+
 }
 
 .App-logo {

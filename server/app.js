@@ -94,8 +94,7 @@ app.use(session({
 }))
 app.use(flash());
 require('./configs/passport')(app);
-    
-
+  
 
 const authRoutes = require('./routes/auth.routes');
 app.use('/auth', authRoutes);
