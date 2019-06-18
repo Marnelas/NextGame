@@ -15,7 +15,8 @@ class services extends Component {
     return this.service.get(`/channel/${id}`).then(response => response.data);
   };
   getStream = () => {
-    return this.service.get(`/list`);
+    return this.service.get(`/list`)
+    .then(response =>response.data);
   };
   searchPeople = name => {
     return this.service.get(`/search/${name}`).then(response => response.data);

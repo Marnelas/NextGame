@@ -71,9 +71,11 @@ router.get("/list", (req,res,next) =>{
   Streamer.find({ votes: { $exists: true } })
     .sort({ votes: -1 })
     .then(response => {
+      if(!response[0] || !response[1] || !response[2])res.json({msg:"no hay suficientes datos para mostrar"})
       const data = [response[0],response[1],response[2]]
       res.json(data);
-    });
+    })
+    .catch(err =>res.json({msg:"ha ocurrido un error con los streaming aleatorios"}))
 
   })
   router.post("/vote", (req, res, next) => {
