@@ -7,7 +7,7 @@ class services extends Component {
   constructor() {
     super();
     this.service = axios.create({
-      baseURL: "http://localhost:3000/stream",
+      baseURL: `${process.env.REACT_APP_URL}stream`,
       withCredentials: true
     });
   }
