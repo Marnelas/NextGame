@@ -33,7 +33,9 @@ class streamRanking extends Component {
                 <div key={elm.id} className="col-sm-4 stream">
                   <Link
                     className="StreamLink"
-                    to={`/ranking/streamDetails/${elm.id}?userId=${this.props.loggedUser._id}`}
+                    to={`/ranking/streamDetails/${
+                      elm.id
+                    }?userId=${this.props.loggedUser._id}`}
                   >
                     <img src={elm.logo} alt={elm.username} />
                     <p>nombre del Streamer:{elm.username}</p>

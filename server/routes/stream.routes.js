@@ -171,7 +171,11 @@ Streamer.find({ id: req.params.id })
 .catch(err=>console.error(err))
 });
    
+// router.get("/getVideos", (req,res,next) =>{
+//   https://api.twitch.tv/kraken/channels/<channel ID>/videos
 
+
+// })
 
 
 

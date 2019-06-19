@@ -155,10 +155,10 @@ router.post("/logout", (req, res, next) => {
  router.get(
    "/twitch/callback",
    passport.authenticate("twitch", {
-     failureRedirect: "https://game-next.herokuapp.com/login"
+     failureRedirect: "http://localhost:5000/login"
    }),
    (req, res) => {
-     res.redirect("https://game-next.herokuapp.com/profile/");
+     res.redirect("http://localhost:5000/profile/");
    }
  );
  router.get("/loggedin", (req, res, next) => {

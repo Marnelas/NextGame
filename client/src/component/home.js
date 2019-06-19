@@ -18,8 +18,9 @@ const Home = (props) =>{
                 ranking de Streamers y poder disfrutar de un muy buen rato
                 de risas y diversión
               </p>
+              
               <Signup />
-              <Login setTheUser={props.setTheUser}/>
+              <Login setTheUser={props.setTheUser} />
             </div>
             <div className="streamer">
               <h2>Streamer</h2>

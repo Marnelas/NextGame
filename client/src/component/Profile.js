@@ -30,7 +30,7 @@ import StreamList from "./streamList"
        {streamerImage}
       <div className="text">
         <h1>Usuario conectado {props.loggedUser.username}</h1>
-
+          
         <p>con email {props.loggedUser.email}</p>
         {infoChannel}
       </div>

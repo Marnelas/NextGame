@@ -238,6 +238,13 @@ margin-top: 1em;
   text-decoration: none;
   display: block;
 }
-.home-link {
-  font-size: 1.5em;
+.home-link img{
+  height: 2em;
+}
+.login-link, .signUp-link{
+  background: rgb(119, 5, 185);
+  padding: 10px 40px;
+  border-radius: 10%
+
+
 }
