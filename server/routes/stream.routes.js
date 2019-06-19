@@ -103,66 +103,51 @@ res.json(response)
     })
   })
 })
-    router.post("/bot", (req,res,next) => {
-      const {username, message, channelUsername, command} = req.body
-      console.log(username, " ", message, " ", channelUsername, " ", command)
-      Bot.findOne({username:username})
-      .then(found=>{
-        if(found){
-          let Bot;
-                   //  console.log(res);
-                   if (
-                     req.user.username == channelUsername
-                   ) {
-                     Bot = new TwitchBot({
-                       username: username,
-                       oauth: `oauth:${
-                         req.user.accessToken
-                       }`,
-                       channels: [channelUsername]
-                     });
-                   }
-                   res.json(found);
-                 }else{
-          const data = {
-            username,message,channelUsername,command
+    router.post(
+      "/bot",(req, res, next) => {
+        const { username, message, channelUsername, command } = req.body;
+        console.log(
+          username,
+          " ",
+          message,
+          " ",
+          channelUsername,
+          " ",
+          command
+        );
+        console.log(req.user.accessToken);
+        console.log(req.user.username)
+        let Bot;
+        //  console.log(res);
+          Bot = new TwitchBot({
+            username: username,
+            oauth: `oauth:${req.user.accessToken}`,
+            channels: [req.user.username]
+          });
+        
+
+        Bot.on("join", channel => {
+          Bot.say(`Joined channel: ${channel}`);
+        });
+        console.log("lloro fuerte");
+
+        Bot.on("error", err => {
+          console.log(err);
+        });
+        console.log(message, "es el mensaje");
+        Bot.on("message", chatter => {
+          if (chatter.message === command) {
+            Bot.say(message);
           }
-          Bot.create(data)
-          .then(created=>{
-            
-                         //  console.log(res);
-                if (req.user.username == channelUsername) {
-                  Bot = new TwitchBot({
-                    username: username,
-                    oauth: `oauth:${req.user.accessToken}`,
-                    channels: [channelUsername]
-                  });
-                }
-            
-            res.json(created)})
-            .catch(err=>console.log(err))
-        }
-
-         Bot.on("join", channel => {
-                  Bot.say(`Joined channel: ${channel}`);
-                });
-                console.log("lloro fuerte")
-
-                Bot.on("error", err => {
-                  console.log(err);
-                });
-                console.log("pero mucho")
-                Bot.on("message", chatter => {
-                  if (chatter.message === "!test") {
-                    Bot.say(message);
-                  }
-
+        });
+        res.json({ msg: "el bot ha sido creado con exito" });
+      
+      
       })
      
     
 
-    })
-  })
+    
  
 
     router.get("/getStreaming/:id", (req,res,next) =>{

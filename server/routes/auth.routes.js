@@ -41,7 +41,7 @@ const tmi = require("tmi.js");
         // We are now logged in (that's why we can also send req.user)
         res.status(200).json(theUser);
       });
-    })(req, res, next);
+    })(req, res, next)
   });
   // passport.authenticate("local", (err, theUser, failuredetails) =>{
   //   if(err) {
@@ -144,23 +144,24 @@ router.post("/signup", (req, res, next) => {
 });
 
 router.post("/logout", (req, res, next) => {
-  req.logout();
-  res.status(200).json({ message: "Log out success!" });
+  req.logout()
+  console.log("hola pepe")
+    res.status(200).json({ message: "Log out success!" });
 });
  router.get(
    "/twitch",
    passport.authenticate("twitch", { forceVerify: true})
  );
- router.get("/twitch/callback",
-   passport.authenticate("twitch", { failureRedirect: "http://localhost:5000/login" }),
+ router.get(
+   "/twitch/callback",
+   passport.authenticate("twitch", {
+     failureRedirect: "https://game-next.herokuapp.com/login"
+   }),
    (req, res) => {
-                   console.log(req.user);
-                
-                   res.redirect("http://localhost:5000");
-                 }
+     res.redirect("https://game-next.herokuapp.com/profile/");
+   }
  );
  router.get("/loggedin", (req, res, next) => {
-   console.log(req.isAuthenticated(), " hola")
  if (req.isAuthenticated()) {
    console.log("cucu")
    res.status(200).json(req.user);
@@ -169,5 +170,9 @@ router.post("/logout", (req, res, next) => {
  res.status(403).json({ message: "No estas logueado, aqui abajo puedes loguearte" });
  });
 
+router.get("/semaphore", (req,res,next) =>{
+  console.log(req.user)
+  res.json(req.user)
+});
 
 module.exports = router;

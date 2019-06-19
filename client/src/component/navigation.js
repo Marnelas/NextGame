@@ -32,6 +32,11 @@ class navigation extends Component {
                   <Nav>
                     <Nav.Item>
                       <Nav.Link as="div">
+                        <Link className="home-link" to="/">Next Game</Link>
+                      </Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                      <Nav.Link as="div">
                         <Link to="/profile">su perfil</Link>
                       </Nav.Link>
                     </Nav.Item>
@@ -67,6 +72,13 @@ class navigation extends Component {
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
                   <Nav>
+                    <Nav.Item>
+                      <Nav.Link as="div">
+                        <Link className="home-link" to="/">
+                          Next Game
+                        </Link>
+                      </Nav.Link>
+                    </Nav.Item>
                     <Nav.Item className="login">
                       <Nav.Link as="div">
                         <Link to="/login">Iniciar sesión</Link>
@@ -74,9 +86,7 @@ class navigation extends Component {
                     </Nav.Item>
                     <Nav.Item className="signUp">
                       <Nav.Link as="div">
-                        <Link  to="/signup">
-                          Registrarse
-                        </Link>
+                        <Link to="/signup">Registrarse</Link>
                       </Nav.Link>
                     </Nav.Item>
                   </Nav>

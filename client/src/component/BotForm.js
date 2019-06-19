@@ -12,14 +12,13 @@ class BotFotm extends Component {
     this.services = new StreamService()
   }
   handleChange = e => {
-    console.log(e.target)
     const { name, value } = e.target;
     this.setState({ [name]: value });
   };
 
   handleSubmit = e => {
     e.preventDefault();
-    const { username, message, channelUsername, command } = this.state;
+    const { username, message,channelUsername, command } = this.state;
     this.services
       .botCreate(username, message, channelUsername, command)
       .then(response => {
@@ -36,6 +35,7 @@ class BotFotm extends Component {
           <label>
             Nombre del Bot:
             <input
+              required
               type="text"
               name="username"
               value={this.state.username}
@@ -45,7 +45,8 @@ class BotFotm extends Component {
           <label>
             mensaje que poner en el bot:{" "}
             <input
-            name="message"
+              required
+              name="message"
               type="text"
               value={this.state.message}
               onChange={this.handleChange}
@@ -54,6 +55,7 @@ class BotFotm extends Component {
           <label>
             Nombre de tu canal:{" "}
             <input
+              required
               type="text"
               name="channelUsername"
               value={this.state.channelUsername}
@@ -63,7 +65,8 @@ class BotFotm extends Component {
           <label>
             Comando a colocar precedido de un !:{" "}
             <input
-            name="command"
+              required
+              name="command"
               type="text"
               value={this.state.command}
               onChange={this.handleChange}

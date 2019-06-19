@@ -25,10 +25,10 @@ import StreamList from "./streamList"
 
   
   return (
-    <div className="row profile">
-      <StreamList />
+    <div className="profile">
+    <StreamList />
        {streamerImage}
-      <div className="col-md-6 text">
+      <div className="text">
         <h1>Usuario conectado {props.loggedUser.username}</h1>
 
         <p>con email {props.loggedUser.email}</p>

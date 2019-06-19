@@ -38,13 +38,14 @@ passport.use(
     {
       clientID: process.env.CLIENTIDTWITCH,
       clientSecret: process.env.TWITCHSECRET,
-      callbackURL: "http://localhost:3000/auth/twitch/callback",
+      callbackURL: "http://localhost:5000/auth/twitch/callback",
       scope: "chat:edit user_read chat:read"
     },
     (accessToken, refreshToken, profile, done) => {
       User.findOne({ email: profile.email })
         .then(user => {
           if (user) {
+            User.findOneAndUpdate({_id:user._id}, {accessToken: accessToken})
             return done(null, user);
           } else {
             const data = {

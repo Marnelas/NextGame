@@ -1,57 +1,72 @@
 import React, { Component } from 'react'
 import AuthServices from '../service/auth/auth-services'
+import Modal from "react-bootstrap/Modal";
+
 
 class Signup extends Component {
+  constructor() {
+    super();
+    this.state = {
+      username: "",
+      password: "",
+      email: "",
+      imageUrl: "",
+      show: false
+    };
+    this.handleShow = this.handleShow.bind(this);
+    this.handleClose = this.handleClose.bind(this);
+    this.services = new AuthServices();
+  }
+  handleClose = () => this.setState({ show: false });
+  handleShow = () => this.setState({ show: true });
+  handleChange = e => {
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
+  };
 
-    constructor(props) {
-        super(props)
-        this.state = { username: '', password: '', email: "", imageUrl:"" }
-        this.services = new AuthServices()
-    }
+  handleSubmit = e => {
+    e.preventDefault();
+    const { username, password, email, imageUrl } = this.state;
+    this.services
+      .signup(username, password, email, imageUrl)
+      .then(response => {
+        this.setState({ username: "", password: "", email: "", imageUrl: "" });
+      })
 
-    handleChange = e => {
-        const { name, value } = e.target;
-        this.setState({ [name]: value })
-    }
+      .catch(error => console.log({ error }));
+  };
+  handleFileUpload = e => {
+    const uploadData = new FormData();
+    uploadData.append("imageUrl", e.target.files[0]);
 
-    handleSubmit = e => {
+    this.services
+      .handleUpload(uploadData)
+      .then(response => {
+        this.setState({
+          imageUrl: response.secure_url
+        });
+        alert("imagen subida");
+      })
+      .catch(err => console.log(err));
+  };
 
-        e.preventDefault()
-        const { username, password,email, imageUrl } = this.state
-          this.services.signup(username, password,email,imageUrl)
-              .then(response => {
-                  this.setState({ username: '', password: '', email: "", imageUrl:"" })
-                  this.props.setTheUser(response)
-                  
-              })
+  render() {
+    return (
+      <div>
+        <button className="btn btn-dark" onClick={this.handleShow}>
+          Registrarse
+        </button>
 
-        
-            .catch(error => console.log({error}))
-    }
-    handleFileUpload = e => {
-
-        const uploadData = new FormData();
-        uploadData.append("imageUrl", e.target.files[0]);
-
-        this.services.handleUpload(uploadData)
-            .then(response => {
-                this.setState({
-                    imageUrl: response.secure_url
-                    
-                })
-                alert("imagen subida")
-            })
-            .catch(err => console.log(err))
-    }
-
-    render() {
-        return (
-          <div className="container ">
+        <Modal show={this.state.show} onHide={this.handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Registrarse</Modal.Title>
+          </Modal.Header>
+          <Modal.Body className="modal-signup">
             <h1 className="signup-title">Registrarse</h1>
 
-            <form className="signup" onSubmit={this.handleSubmit}>
+            <form className="signup container" onSubmit={this.handleSubmit}>
               <div className="row">
-                <div className="col-md-3">
+                <div className="col-md-6">
                   <label htmlFor="username">Usuario</label>
                   <input
                     onChange={this.handleChange}
@@ -62,7 +77,7 @@ class Signup extends Component {
                     name="username"
                   />
                 </div>
-                <div className="col-md-3">
+                <div className="col-md-6">
                   <label htmlFor="password">Contraseña</label>
                   <input
                     onChange={this.handleChange}
@@ -73,8 +88,10 @@ class Signup extends Component {
                     required
                     name="password"
                   />
+                  </div>
                 </div>
-                <div className="col-md-3">
+                  <div className="row">
+                <div className="col-md-6">
                   <label htmlFor="email">email</label>
                   <input
                     onChange={this.handleChange}
@@ -86,7 +103,7 @@ class Signup extends Component {
                     required
                   />
                 </div>
-                <div className="col-md-3">
+                <div className="col-md-6">
                   <label htmlFor="imageUrl">URL imagen</label>
                   <input
                     onChange={this.handleFileUpload}
@@ -101,10 +118,11 @@ class Signup extends Component {
                 Enviar
               </button>
             </form>
-          </div>
-        );
-    }
-
+          </Modal.Body>
+        </Modal>
+      </div>
+    );
+  }
 }
 
 export default Signup

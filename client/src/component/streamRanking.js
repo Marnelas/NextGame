@@ -4,8 +4,8 @@ import {Link } from "react-router-dom"
 import StreamList from "./streamList"
 
 class streamRanking extends Component {
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
     this.state={
       streams: [],
     }
@@ -14,7 +14,6 @@ class streamRanking extends Component {
     componentDidMount = () =>{
       this.services.showStream()
       .then(response=>{
-        console.log(response)
         let start = []
         start.push(response.map(elm => {
           return new Date(elm.created_at);
@@ -23,8 +22,6 @@ class streamRanking extends Component {
     }
 
   render() {
-    console.log(this.state.streams, "-----------------------  ")
-    console.log(this.props.loggedUser._id);
     return (
       <div>
         <StreamList

@@ -7,7 +7,7 @@ html {
 }
 .App {
   text-align: center;
-  height:100vh;
+  min-height:100vh;
     background-color: rgba(140, 175, 255, 0.534);
 
 
@@ -228,10 +228,16 @@ margin-top: 1em;
   display: flex;
   justify-content: space-around;
 }
-.usuario, .streamer{
-  background-color: rgba(140, 175, 255, 0.534);
 
-}
 .usuario p, .streamer p{
-  max-width: 170px;
+  max-width: 200px;
+  text-align: left;
+}
+.usuario a, .streamer a{
+  color:black;
+  text-decoration: none;
+  display: block;
+}
+.home-link {
+  font-size: 1.5em;
 }
