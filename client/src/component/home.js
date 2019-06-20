@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom"
 import ActiveStream from './ActiveStream';
+import StreamCarrousel from "./StreamCarrousel"
 
 
 const Home = (props) =>{
@@ -33,7 +34,12 @@ const Home = (props) =>{
           <div className="Streaming-active">
             <ActiveStream />
           </div>
-          <h2>estoy llegando wey</h2>
+
+            <StreamCarrousel />
+
+
+         
+
         </div>
       );
 }

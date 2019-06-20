@@ -12,7 +12,6 @@ class IsStreaming extends Component {
   componentDidMount = () =>{
     this.service.inStream(this.props.id)
     .then(response=>{
-      console.log(response)
       if(response.stream){
         
         this.setState({streaming:response.stream.preview,url:response.stream.channel.url})}

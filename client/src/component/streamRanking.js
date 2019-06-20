@@ -27,7 +27,6 @@ class streamRanking extends Component {
     }
 
   render() {
-    console.table(this.state.preview)
     return (
       <div>
         <div className="stream-active">
@@ -38,7 +37,7 @@ class streamRanking extends Component {
             {this.state.streams.map((elm, i) => {
               return (
                 <div key={elm.id} className="col-sm-4 stream">
-                  
+                  <div className="streamcontainer">
                     <Link
                       className="StreamLink "
                       to={`/ranking/streamDetails/${
@@ -52,8 +51,9 @@ class streamRanking extends Component {
                       <p className="isStreaming">
                         con {elm.votes} votos a día de hoy
                       </p>
-                        <IsStreaming id={elm.id} />
                     </Link>
+                        <IsStreaming id={elm.id} />
+                        </div>
                   
                 </div>
               );

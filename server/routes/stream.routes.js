@@ -17,6 +17,7 @@ router.get("/search/:name", (req,res,next) =>{
   const name = req.params.name
   axios.get(`https://api.twitch.tv/helix/users?&login=${name}`)
   .then(response=>{
+    console.log("busca en tu interior", response)
                              
 
                     Streamer.findOne({id:response.data.data[0].id})
@@ -71,8 +72,9 @@ router.get("/list", (req,res,next) =>{
   Streamer.find({ votes: { $exists: true } })
     .sort({ votes: -1 })
     .then(response => {
-      if(!response[0] || !response[1] || !response[2])res.json({msg:"no hay suficientes datos para mostrar"})
-      const data = [response[0],response[1],response[2]]
+      if(!response[0] || !response[1] || !response[2] || response[6])res.json({msg:"no hay suficientes datos para mostrar"})
+      const data = [response[0],response[1],response[2],response[3],response[4],response[5],response[6],response[7],response[8],response[9]]
+      console.log(data)
       res.json(data);
     })
     .catch(err =>res.json({msg:"ha ocurrido un error con los streaming aleatorios"}))
@@ -196,6 +198,7 @@ router.get("/homeStream", (req, res, next) => {
   Streamer.find({})
   .then(found=>{
     randomNumber = Math.floor(Math.random()*found.length)
+    
     const id = found[randomNumber].id
     
     axios

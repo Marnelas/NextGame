@@ -41,7 +41,7 @@ class ActiveStream extends Component {
     }else{
       return (
         <div>
-          <h2>No hay streamings activos en este momento</h2>
+          <h2 className="no-stream">No hay streamings activos en este momento</h2>
         </div>
       )
     }
