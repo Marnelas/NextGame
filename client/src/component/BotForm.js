@@ -9,10 +9,15 @@ class BotFotm extends Component {
       username: "",
       message: "",
       channelUsername: "",
-      command: ""
-    }
-    this.services = new StreamService()
+      command: "",
+      show: false
+    };
+    this.handleShow = this.handleShow.bind(this);
+    this.handleClose = this.handleClose.bind(this);
+    this.services = new StreamService();
   }
+  handleClose = () => this.setState({ show: false });
+  handleShow = () => this.setState({ show: true });
   handleChange = e => {
     const { name, value } = e.target;
     this.setState({ [name]: value });
@@ -20,12 +25,16 @@ class BotFotm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    const { username, message,channelUsername, command } = this.state;
+    const { username, message, channelUsername, command } = this.state;
     this.services
       .botCreate(username, message, channelUsername, command)
       .then(response => {
-        this.setState({ username: "", message: "", channelUsername: "", command: "" });
-          
+        this.setState({
+          username: "",
+          message: "",
+          channelUsername: "",
+          command: ""
+        });
       })
 
       .catch(error => console.log({ error }));
