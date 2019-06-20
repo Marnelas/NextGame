@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Link} from "react-router-dom"
 
 import StreamService from "../service/stream-services"
+import BotForm from './BotForm';
 
 
 class Channel extends Component {
@@ -72,7 +73,7 @@ class Channel extends Component {
             <p>Juego actual seleccionado: {this.state.channel.game} </p>
           </div>
           <div className="row">
-          <Link to="/bot">Link a la creación del Bot</Link>
+            <BotForm />
           </div>
         </div>
       </div>
