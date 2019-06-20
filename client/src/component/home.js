@@ -18,11 +18,11 @@ const Home = (props) =>{
                   href={`${process.env.REACT_APP_URL}auth/twitch`}
                   className="login-link"
                 >
-                  registrarse
+                  ¡Registrarse!
                 </a>
               </div>
               <Link className="contents" to="/more">
-                Saber más
+                ¡Saber más...!
               </Link>
             </div>
             <img

@@ -32,7 +32,7 @@ class IsStreaming extends Component {
       </div>
     );
     }else{
-      return <div className="isStreaming">nadie esta en streaming</div>
+      return <div className="isStreaming">Esta persona no está en streaming</div>
     }
   }
 }

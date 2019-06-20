@@ -37,7 +37,7 @@ class navigation extends Component {
                   <Nav>
                     <Nav.Item>
                       <Nav.Link as="div">
-                        <Link to="/profile">su perfil</Link>
+                        <Link to="/profile">Perfil</Link>
                       </Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
@@ -53,7 +53,7 @@ class navigation extends Component {
                     <Nav.Item>
                       <Nav.Link as="div">
                         <div onClick={this.logout}>
-                          Cerrar sesión
+                          ¡Cerrar sesión!
                         </div>
                       </Nav.Link>
                     </Nav.Item>

@@ -34,12 +34,12 @@ class Login extends Component {
     return (
       <div>
         <button className="login-link" onClick={this.handleShow}>
-          Iniciar sesión
+          ¡Iniciar sesión!
         </button>
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header className="background-dark" closeButton>
             <Modal.Title className="background-dark">
-              Iniciar sesión
+              Iniciar sesión:
             </Modal.Title>
           </Modal.Header>
           <Modal.Body className="modal-signup background-dark">

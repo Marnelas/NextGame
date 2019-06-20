@@ -39,39 +39,40 @@ class Channel extends Component {
         <div className="container">
           <form onSubmit={this.handleSubmit}>
             <label>
-              Search:
+              Busqueda:
               <input type="text" onChange={this.handleChange} name="search" value={this.state.search}/>
             </label>
-            <button>buscar</button>
+            <button>¡Buscar!</button>
           </form>
-{this.state.saved}          <h2>Información adicional</h2>
+{this.state.saved}    
+      <h2>Información adicional</h2>
           <div className="row">
             <p className="col-md-4">{this.state.channel.description}</p>
             <p className="col-md-4">
-              tiene {this.state.channel.followers} seguidores
+              Tiene {this.state.channel.followers} seguidores
             </p>
             <p className="col-md-4">
-              tipo de canal: {this.state.channel.broadcaster_type}
+              Tipo de canal: {this.state.channel.broadcaster_type}
             </p>
           </div>
           <div className="banner">
-            <h3>banner del canal</h3>
+            <h3>Banner del canal</h3>
             <img
               src={this.state.channel.profile_banner}
               alt={this.state.channel.name}
             />
           </div>
           <div className="row">
-            <h3>información actual en tu streaming</h3>
+            <h3>Información actual en tu streaming</h3>
           </div>
           <div className="row">
-            <p>título actual: {this.state.channel.status}</p>
+            <p>Título actual: {this.state.channel.status}</p>
           </div>
           <div className="row">
             <p>Juego actual seleccionado: {this.state.channel.game} </p>
           </div>
           <div className="row">
-          <Link to="/bot">link a la creación de bot</Link>
+          <Link to="/bot">Link a la creación del Bot</Link>
           </div>
         </div>
       </div>

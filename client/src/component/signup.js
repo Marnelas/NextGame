@@ -45,7 +45,7 @@ class Signup extends Component {
         this.setState({
           imageUrl: response.secure_url
         });
-        alert("imagen subida");
+        alert("¡Imagen subida!");
       })
       .catch(err => console.log(err));
   };
@@ -54,16 +54,16 @@ class Signup extends Component {
     return (
       <div>
         <button className="login-link" onClick={this.handleShow}>
-          Registrarse
+          ¡Registrarse!
         </button>
 
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header className="background-dark" closeButton>
-            <Modal.Title>Registrarse</Modal.Title>
+            <Modal.Title>Registrarse:</Modal.Title>
           </Modal.Header>
           <Modal.Body className=" background-dark modal-signup">
             <form className="signup container" onSubmit={this.handleSubmit}>
-              <label htmlFor="username">Usuario</label>
+              <label htmlFor="username">Usuario:</label>
               <input
                 onChange={this.handleChange}
                 value={this.state.username}
@@ -72,7 +72,7 @@ class Signup extends Component {
                 id="username"
                 name="username"
               />
-              <label htmlFor="password">Contraseña</label>
+              <label htmlFor="password">Contraseña:</label>
               <input
                 onChange={this.handleChange}
                 value={this.state.password}
@@ -83,7 +83,7 @@ class Signup extends Component {
                 name="password"
               />
 
-              <label htmlFor="email">email</label>
+              <label htmlFor="email">Email:</label>
               <input
                 onChange={this.handleChange}
                 value={this.state.email}
@@ -94,7 +94,7 @@ class Signup extends Component {
                 required
               />
 
-              <label htmlFor="imageUrl">URL imagen</label>
+              <label htmlFor="imageUrl">URL imagen:</label>
               <input
                 onChange={this.handleFileUpload}
                 type="file"
@@ -104,7 +104,7 @@ class Signup extends Component {
               />
 
               <button type="submit" className="login-link">
-                Enviar
+                ¡Enviar!
               </button>
             </form>
           </Modal.Body>
