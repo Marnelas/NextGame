@@ -98,7 +98,7 @@ min-height: 200vh;
   text-decoration: none;
   color:#282c34;
   background: rgb(119, 5, 185);
-  border-radius: 25%;
+  border-radius: 5%;
   padding: 10px 20px;
   color:white;
   
@@ -252,10 +252,13 @@ margin-top: 1em;
 .login-link, .signUp-link{
   background: rgb(119, 5, 185);
   padding: 10px 40px;
-  border-radius: 10%;
   color:white;
 
 
+}
+
+button:focus {
+  outline: none
 }
 .box-intro {
   background: rgb(119, 5, 185);
@@ -266,9 +269,10 @@ margin-top: 1em;
   margin-top: 50px;
   text-align: left;
   display: flex;
-  padding-left: 4em;
+  padding-left: 2.5em;
+  padding-right: 2em;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
 
 }
 .box-intro p {
@@ -328,8 +332,8 @@ font-weight: 200;
 
 .carousel-img {
   display: inline-block;
-   width: 150px;
-  height: 250px;
+   width: auto;
+  height: 150px;
   margin-right: 5px;
 }
 
@@ -372,4 +376,36 @@ font-weight: 200;
 
 .unshown {
   display: none;
+}
+.no-focus-outline button:focus {
+  outline: none;
+  text-decoration: none;  
+}
+.streamer-moreInfo a:hover{
+text-decoration: none;
+color: white;
+}
+.smallp {
+  margin-bottom: 1.5em;
+  max-width: 40em;;
+}
+.largeTex {
+    max-width: 40em;
+    ;
+
+}
+.flexRegistry {
+  display: flex;
+  justify-content: space-evenly;
+  margin-right:5.5em;
+}
+.login-a {
+  border-color: white;
+  color:white;
+  padding: .8em 1.2em;
+  border-style: solid;
+  border-width: 0.04em;
+}
+.smallpDiv {
+  margin-top: 0.2em;
 }

@@ -23,14 +23,12 @@ class StreamCarrousel extends Component {
 
 
   render() {
-    console.log(this.state.stream)
     if(this.state.stream.length){
 
       return (
         <div className="carousel">
           <div className="holder">
             {this.state.stream.map(elm => {
-              console.log(elm);
               if (elm !== null) {
                 return (
                   <a href={elm.stream_url} target="_blank">

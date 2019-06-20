@@ -4,14 +4,14 @@ import Modal from "react-bootstrap/Modal";
 
 
 class Signup extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       username: "",
       password: "",
       email: "",
       imageUrl: "",
-      show: false
+      show: false,msg:""
     };
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
@@ -33,7 +33,7 @@ class Signup extends Component {
         this.setState({ username: "", password: "", email: "", imageUrl: "" });
       })
 
-      .catch(error => console.log({ error }));
+      .catch(error => this.setState({msg:error}));
   };
   handleFileUpload = e => {
     const uploadData = new FormData();
@@ -53,7 +53,11 @@ class Signup extends Component {
   render() {
     return (
       <div>
-        <button className="login-link" onClick={this.handleShow}>
+        <button
+          autoFocus="false"
+          className="login-link no-focus-outline"
+          onClick={this.handleShow}
+        >
           ¡Registrarse!
         </button>
 

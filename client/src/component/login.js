@@ -33,7 +33,11 @@ class Login extends Component {
   render() {
     return (
       <div>
-        <button className="login-link" onClick={this.handleShow}>
+        <button
+          autoFocus="false"
+          className="login-link no-focus-outline"
+          onClick={this.handleShow}
+        >
           ¡Iniciar sesión!
         </button>
         <Modal show={this.state.show} onHide={this.handleClose}>

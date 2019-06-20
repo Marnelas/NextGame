@@ -16,12 +16,12 @@ const Home = (props) =>{
               <div className="signup-button">
                 <a
                   href={`${process.env.REACT_APP_URL}auth/twitch`}
-                  className="login-link"
+                  className="login-link no-focus-outline"
                 >
                   ¡Registrarse!
                 </a>
               </div>
-              <Link className="contents" to="/more">
+              <Link className="contents login-a" to="/more">
                 ¡Saber más...!
               </Link>
             </div>
@@ -35,11 +35,7 @@ const Home = (props) =>{
             <ActiveStream />
           </div>
 
-            <StreamCarrousel />
-
-
-         
-
+          <StreamCarrousel />
         </div>
       );
 }
