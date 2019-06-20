@@ -1,38 +1,31 @@
 import React from 'react';
-import StreamList from './streamList';
 import {Link} from "react-router-dom"
-import Signup from './signup';
-import Login from './login';
+
 
 const Home = (props) =>{
       return (
         <div className="home">
-          <StreamList />
-
-          <hr />
-          <div className="infos">
-            <div className="usuario">
-              <h2>Usuario</h2>
+          <div className="box-intro">
+            <div>
               <p>
-                si te registras como usuario podras descubrir nuestro
-                ranking de Streamers y poder disfrutar de un muy buen rato
-                de risas y diversión
+                Con NextGame puedes aumentar tú número de seguidores
+                <br />y así obtener la comunidad que mereces
               </p>
-              
-              <Signup />
-              <Login setTheUser={props.setTheUser} />
+              <div className="signup-button">
+                <a
+                  href={`${process.env.REACT_APP_URL}auth/twitch`}
+                  className="login-link"
+                >
+                  registrarse
+                </a>
+              </div>
+              <Link className="contents" to="/more">Saber más</Link>
             </div>
-            <div className="streamer">
-              <h2>Streamer</h2>
-              <p>
-                Como streamer al registrarte tendras acceso a promocionar
-                tu canal añadiendolo al ranking ademas del acceso a la
-                creación de un bot para tu canal;
-              </p>
-              <a href={`${process.env.REACT_APP_URL}auth/twitch`}>
-                registrarse con twitch
-              </a>
-            </div>
+            <img
+              className="box-image"
+              src="/ahriArcade.png"
+              alt="ahri arcade"
+            />
           </div>
         </div>
       );

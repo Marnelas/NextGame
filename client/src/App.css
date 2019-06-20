@@ -8,7 +8,7 @@ html {
 .App {
   text-align: center;
   min-height:100vh;
-    background-color: rgba(140, 175, 255, 0.534);
+    background-color: rgb(70, 70, 70);
 
 
 }
@@ -64,7 +64,7 @@ html {
 .app{
 background-size: cover;
 color:black;
-  background-color: #D8CDFD;
+  background-color: rgb(70, 70, 70);
 
 
 
@@ -78,7 +78,7 @@ color:black;
 }
 .logged-out{
   text-align: center;
-  background-color: rgb(205, 214, 253);
+  background-color: rgb(70, 70, 70);
     height:100vh;
 
 
@@ -102,10 +102,12 @@ color:black;
   
 }
 .login {
-  display:block;
+  display: block;
+  
 }
-.signUp {
-  display: block
+.logIn {
+  display: flex;
+  align-content: space-between;
 }
 
 .navigation a{
@@ -113,6 +115,9 @@ color:black;
   color: white;
 
 
+}
+.navigation{
+  background: rgb(24, 26, 25)
 }
 nav div{
   color: white;
@@ -122,7 +127,7 @@ nav {
   color:white;
 }
 .signup input{
-  margin:20px;
+  margin-bottom:20px;
 
 }
 .greetings:hover {
@@ -244,7 +249,44 @@ margin-top: 1em;
 .login-link, .signUp-link{
   background: rgb(119, 5, 185);
   padding: 10px 40px;
-  border-radius: 10%
+  border-radius: 10%;
+  color:white;
 
 
+}
+.box-intro {
+  background: rgb(119, 5, 185);
+  height:302px;
+  width: 1162px;
+  margin-left: 120px;
+  color :white;
+  margin-top: 50px;
+  text-align: left;
+  display: flex;
+  padding-left: 4em;
+  align-items: center;
+  justify-content: space-between;
+
+}
+.box-intro p {
+  font-size: 1em;
+  font-weight: 405px;
+  
+}
+.box-image {
+  height: 115%;
+}
+.signup-button, .logIn button {
+  display: inline-block;
+  margin-right: 3.5em;
+}
+.contents {
+  color:white;
+  border-bottom: white;
+  border-bottom-style: solid;
+
+
+}
+.signup-button a{
+  text-decoration: none;
 }

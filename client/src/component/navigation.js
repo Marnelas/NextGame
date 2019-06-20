@@ -4,6 +4,8 @@ import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import AuthServices from '../service/auth/auth-services'
 import NavbarBrand from 'react-bootstrap/NavbarBrand';
+import Login from "./login"
+import Signup from './signup';
 
 
 class navigation extends Component {
@@ -63,8 +65,6 @@ class navigation extends Component {
             return (
               <Navbar
                 expand="md"
-                bg="dark"
-                variant="dark"
                 className="justify-content-end navigation"
               >
                 <NavbarBrand as="div">
@@ -80,16 +80,12 @@ class navigation extends Component {
                   <Nav>
                     <Nav.Item className="login">
                       <Nav.Link as="div">
-                        <Link className="login-link" to="/login">
-                          Iniciar sesión
-                        </Link>
+                        <Login setTheUser={this.props.setTheUser} />
                       </Nav.Link>
                     </Nav.Item>
                     <Nav.Item className="signUp">
                       <Nav.Link as="div">
-                        <Link className="signUp-link" to="/signup">
-                          Registrarse
-                        </Link>
+                        <Signup />
                       </Nav.Link>
                     </Nav.Item>
                   </Nav>

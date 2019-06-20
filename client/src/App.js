@@ -13,6 +13,7 @@ import StreamDetail from "./component/StreamDetail"
 import BotForm from './component/BotForm';
 import ProtectedRoute from "./component/protected-route"
 import semaforo from './component/semaforo';
+import MoreInfo from "./component/moreInfo"
 
 
 
@@ -49,6 +50,7 @@ class App extends Component {
             />
 
             <Switch>
+              <Route path="/more" component={MoreInfo} />
               <Route
                 path="/signup"
                 exact

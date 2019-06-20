@@ -53,7 +53,7 @@ class Signup extends Component {
   render() {
     return (
       <div>
-        <button className="btn btn-dark" onClick={this.handleShow}>
+        <button className="login-link" onClick={this.handleShow}>
           Registrarse
         </button>
 
@@ -62,11 +62,8 @@ class Signup extends Component {
             <Modal.Title>Registrarse</Modal.Title>
           </Modal.Header>
           <Modal.Body className="modal-signup">
-            <h1 className="signup-title">Registrarse</h1>
 
             <form className="signup container" onSubmit={this.handleSubmit}>
-              <div className="row">
-                <div className="col-md-6">
                   <label htmlFor="username">Usuario</label>
                   <input
                     onChange={this.handleChange}
@@ -76,8 +73,6 @@ class Signup extends Component {
                     id="username"
                     name="username"
                   />
-                </div>
-                <div className="col-md-6">
                   <label htmlFor="password">Contraseña</label>
                   <input
                     onChange={this.handleChange}
@@ -88,10 +83,7 @@ class Signup extends Component {
                     required
                     name="password"
                   />
-                  </div>
-                </div>
-                  <div className="row">
-                <div className="col-md-6">
+              
                   <label htmlFor="email">email</label>
                   <input
                     onChange={this.handleChange}
@@ -102,8 +94,7 @@ class Signup extends Component {
                     name="email"
                     required
                   />
-                </div>
-                <div className="col-md-6">
+               
                   <label htmlFor="imageUrl">URL imagen</label>
                   <input
                     onChange={this.handleFileUpload}
@@ -112,9 +103,8 @@ class Signup extends Component {
                     id="imageUrl"
                     name="imageUrl"
                   />
-                </div>
-              </div>
-              <button type="submit" className="btn btn-dark">
+          
+              <button type="submit" className="login-link">
                 Enviar
               </button>
             </form>

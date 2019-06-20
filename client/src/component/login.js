@@ -32,42 +32,40 @@ class Login extends Component {
   };
   render() {
     return (
-      <div className="container twitch-login">
-        <button className="btn btn-dark" onClick={this.handleShow}>
+      <div>
+        <button className="login-link" onClick={this.handleShow}>
           Iniciar sesión
         </button>
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Registrarse</Modal.Title>
+            <Modal.Title>Iniciar sesión</Modal.Title>
           </Modal.Header>
           <Modal.Body className="modal-signup">
-            <h1>Iniciar sesión</h1>
+            <form className="signup container" onSubmit={this.handleSubmit}>
+              <label htmlFor="email">Email</label>
+              <input
+                onChange={this.handleChange}
+                value={this.state.email}
+                type="email"
+                className="form-control"
+                id="email"
+                required
+                name="email"
+              />
 
-            <form onSubmit={this.handleSubmit}>
-              <div className="form-group">
-                <label htmlFor="email">Email</label>
-                <input
-                  onChange={this.handleChange}
-                  value={this.state.email}
-                  type="email"
-                  className="form-control"
-                  id="email"
-                  name="email"
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="password">Contraseña</label>
-                <input
-                  onChange={this.handleChange}
-                  value={this.state.password}
-                  type="password"
-                  className="form-control"
-                  id="password"
-                  name="password"
-                />
-              </div>
-              <button type="submit" className="btn btn-dark">
-                ¡Acceder
+              <label htmlFor="password">Contraseña</label>
+
+              <input
+                onChange={this.handleChange}
+                value={this.state.password}
+                type="password"
+                className="form-control"
+                id="password"
+                required
+                name="password"
+              />
+              <button type="submit" className="login-link">
+                ¡Acceder!
               </button>
             </form>
           </Modal.Body>

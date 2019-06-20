@@ -33,7 +33,7 @@ class services extends Component {
     console.log(id);
     return this.service
       .get(`/getStreaming/${id}`)
-      .then(response => response.data);
+      .then(response => console.log(response.data));
   };
   showStream = () => {
     return this.service.get("/show").then(response => response.data);
