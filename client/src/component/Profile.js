@@ -11,7 +11,7 @@ import StreamList from "./streamList"
       </div>
     )
     infoChannel = (
-      <Link to={`/channel/${props.loggedUser.id}`}>info channel</Link>
+      <Link className="login-link"to={`/channel/${props.loggedUser.id}`}>info channel</Link>
     );
   } else {
     infoChannel = (
@@ -26,7 +26,6 @@ import StreamList from "./streamList"
   
   return (
     <div className="profile">
-    <StreamList />
        {streamerImage}
       <div className="text">
         <h1>Usuario conectado {props.loggedUser.username}</h1>

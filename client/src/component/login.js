@@ -37,10 +37,12 @@ class Login extends Component {
           Iniciar sesión
         </button>
         <Modal show={this.state.show} onHide={this.handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>Iniciar sesión</Modal.Title>
+          <Modal.Header className="background-dark" closeButton>
+            <Modal.Title className="background-dark">
+              Iniciar sesión
+            </Modal.Title>
           </Modal.Header>
-          <Modal.Body className="modal-signup">
+          <Modal.Body className="modal-signup background-dark">
             <form className="signup container" onSubmit={this.handleSubmit}>
               <label htmlFor="email">Email</label>
               <input

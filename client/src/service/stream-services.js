@@ -33,17 +33,20 @@ class services extends Component {
     console.log(id);
     return this.service
       .get(`/getStreaming/${id}`)
-      .then(response => console.log(response.data));
+      .then(response => response.data);
   };
   showStream = () => {
     return this.service.get("/show").then(response => response.data);
   };
   getInfo = id => {
-    console.log(id, "jfaifjwogwajg");
     return this.service.get(`/getinfo/${id}`).then(response => response.data);
   };
   botCreate = (username, message, channelUsername, command) =>{
     return this.service.post("/bot", {username, message, channelUsername, command})
+    .then(response=>response.data)
+  }
+  homeStream = () =>{
+    return this.service.get("/homeStream")
     .then(response=>response.data)
   }
 }

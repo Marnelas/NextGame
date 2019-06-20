@@ -14,7 +14,8 @@ class StreamDetail extends Component {
       hateState:false,
       voteInfo:{},
       voted:false,
-      query:""
+      query:"",
+      preview:{}
       
     };
     this.service = new StreamService();
@@ -31,7 +32,7 @@ class StreamDetail extends Component {
           ...response.stream,
           started: `el dia ${time.toLocaleDateString()} en la hora ${time.toLocaleTimeString()}`
         };
-        this.setState({ stream: data });
+        this.setState({ stream: data,preview:response.stream.preview });
       } else {
         this.setState({ stream: response.stream });
       }
@@ -118,6 +119,7 @@ class StreamDetail extends Component {
       return (
         <div className="container infoStream">
           <h1>Streaming de {this.state.AccountData.name}</h1>
+          <a href={this.state.AccountData.url} target="_blank"><img src={this.state.preview.large} alt="streaming" /></a>
 
           <div className="row">
             <div className="col-md-6 infoImg">

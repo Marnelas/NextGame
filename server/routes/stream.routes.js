@@ -161,7 +161,29 @@ res.json(response)
     });
     router.get("/show",(req,res,next) =>{
       Streamer.find({}).sort({votes:-1})
-      .then(response=>res.json(response))
+      .then(response=>{
+        const data = {
+          ...response
+        }
+        console.log(response.id)
+        // axios
+        //   .get(`https://api.twitch.tv/kraken/streams/${response.id}`)
+        //   .then(response => {
+            res.json(response);
+        //   })
+        //   .catch(err=>console.log(err))
+
+        })
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
       .catch(err=>console.error(err))
     });
     router.get("/getinfo/:id",(req,res,next)=>{
@@ -169,6 +191,22 @@ res.json(response)
 Streamer.find({ id: req.params.id })
 .then(response=>res.json(response))
 .catch(err=>console.error(err))
+});
+router.get("/homeStream", (req, res, next) => {
+  Streamer.find({})
+  .then(found=>{
+    randomNumber = Math.floor(Math.random()*found.length)
+    const id = found[randomNumber].id
+    
+    axios
+      .get(`https://api.twitch.tv/kraken/streams/${id}`)
+      .then(response => {
+          res.json(response.data)
+        
+      })
+
+  })
+    .catch(err => console.error(err));
 });
    
 // router.get("/getVideos", (req,res,next) =>{

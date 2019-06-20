@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from "react-router-dom"
+import ActiveStream from './ActiveStream';
 
 
 const Home = (props) =>{
@@ -19,7 +20,9 @@ const Home = (props) =>{
                   registrarse
                 </a>
               </div>
-              <Link className="contents" to="/more">Saber más</Link>
+              <Link className="contents" to="/more">
+                Saber más
+              </Link>
             </div>
             <img
               className="box-image"
@@ -27,6 +30,10 @@ const Home = (props) =>{
               alt="ahri arcade"
             />
           </div>
+          <div className="Streaming-active">
+            <ActiveStream />
+          </div>
+          <h2>estoy llegando wey</h2>
         </div>
       );
 }

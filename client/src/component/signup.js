@@ -58,52 +58,51 @@ class Signup extends Component {
         </button>
 
         <Modal show={this.state.show} onHide={this.handleClose}>
-          <Modal.Header closeButton>
+          <Modal.Header className="background-dark" closeButton>
             <Modal.Title>Registrarse</Modal.Title>
           </Modal.Header>
-          <Modal.Body className="modal-signup">
-
+          <Modal.Body className=" background-dark modal-signup">
             <form className="signup container" onSubmit={this.handleSubmit}>
-                  <label htmlFor="username">Usuario</label>
-                  <input
-                    onChange={this.handleChange}
-                    value={this.state.username}
-                    type="text"
-                    className="form-control"
-                    id="username"
-                    name="username"
-                  />
-                  <label htmlFor="password">Contraseña</label>
-                  <input
-                    onChange={this.handleChange}
-                    value={this.state.password}
-                    type="password"
-                    className="form-control"
-                    id="password"
-                    required
-                    name="password"
-                  />
-              
-                  <label htmlFor="email">email</label>
-                  <input
-                    onChange={this.handleChange}
-                    value={this.state.email}
-                    type="email"
-                    className="form-control"
-                    id="email"
-                    name="email"
-                    required
-                  />
-               
-                  <label htmlFor="imageUrl">URL imagen</label>
-                  <input
-                    onChange={this.handleFileUpload}
-                    type="file"
-                    className="form-control"
-                    id="imageUrl"
-                    name="imageUrl"
-                  />
-          
+              <label htmlFor="username">Usuario</label>
+              <input
+                onChange={this.handleChange}
+                value={this.state.username}
+                type="text"
+                className="form-control"
+                id="username"
+                name="username"
+              />
+              <label htmlFor="password">Contraseña</label>
+              <input
+                onChange={this.handleChange}
+                value={this.state.password}
+                type="password"
+                className="form-control"
+                id="password"
+                required
+                name="password"
+              />
+
+              <label htmlFor="email">email</label>
+              <input
+                onChange={this.handleChange}
+                value={this.state.email}
+                type="email"
+                className="form-control"
+                id="email"
+                name="email"
+                required
+              />
+
+              <label htmlFor="imageUrl">URL imagen</label>
+              <input
+                onChange={this.handleFileUpload}
+                type="file"
+                className="form-control"
+                id="imageUrl"
+                name="imageUrl"
+              />
+
               <button type="submit" className="login-link">
                 Enviar
               </button>

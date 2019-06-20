@@ -20,7 +20,7 @@ html {
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: rgb(70, 70, 70);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -65,7 +65,7 @@ html {
 background-size: cover;
 color:black;
   background-color: rgb(70, 70, 70);
-
+min-height: 200vh;
 
 
 }
@@ -79,7 +79,7 @@ color:black;
 .logged-out{
   text-align: center;
   background-color: rgb(70, 70, 70);
-    height:100vh;
+    min-height:100vh;
 
 
 }
@@ -96,9 +96,10 @@ color:black;
   size: 2em;
   text-decoration: none;
   color:#282c34;
-  background: rgba(25, 0, 255, 0.418);
+  background: rgb(119, 5, 185);
   border-radius: 25%;
   padding: 10px 20px;
+  color:white;
   
 }
 .login {
@@ -271,6 +272,7 @@ margin-top: 1em;
 .box-intro p {
   font-size: 1em;
   font-weight: 405px;
+  font-size: 1.3em;
   
 }
 .box-image {
@@ -282,11 +284,41 @@ margin-top: 1em;
 }
 .contents {
   color:white;
-  border-bottom: white;
-  border-bottom-style: solid;
-
+}
+.contents:hover {
+  text-decoration: none;
+  color:white;
+}
+.signup-button a:hover{
+  text-decoration: none;
+  color:white;
+}
+.background-dark {
+  background: rgb(24, 26, 25);
+  color:white
+}
+.Streaming-active{
+  margin-top:20px;
+}
+.infoStream,
+.text {
+  color:white;
+}
+.stream-active a, .infoStream a{
+  background-color: rgb(70, 70, 70)
+}
+.stream-active {
+  text-align: center;
+}
+.isStreaming{
+  color:white;
+}
+.noColored{
+  background: rgb(70, 70, 70);
 
 }
-.signup-button a{
-  text-decoration: none;
+.stream {
+text-align: center;
+}
+.stream-ranking {
 }

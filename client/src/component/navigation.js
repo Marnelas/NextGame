@@ -33,7 +33,7 @@ class navigation extends Component {
               <NavbarBrand as="div"><Link className="home-link" to="/"><img src="/Next-Game-logo.png" alt="next game logo"/></Link>
  </NavbarBrand>
                 <Navbar.Toggle />
-                <Navbar.Collapse className="justify-content-end navigation">
+                <Navbar.Collapse className="justify-content-end">
                   <Nav>
                     <Nav.Item>
                       <Nav.Link as="div">
